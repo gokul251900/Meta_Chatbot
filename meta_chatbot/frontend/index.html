@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVIDIA Programming Assistant</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-icon">G</div>
+    <div><h2>DEEPseek Dev</h2><span>Programming Assistant</span></div>
+  </div>
+
+  <button class="new-chat" onclick="newChat()">+ New Chat</button>
+
+  <div class="sidebar-section">
+    <p class="section-title">Programming</p>
+    <button onclick="usePrompt('Explain Python from beginner to advanced')">🐍 Python</button>
+    <button onclick="usePrompt('Teach me Java step by step')">☕ Java</button>
+    <button onclick="usePrompt('Teach me JavaScript')">🟨 JavaScript</button>
+    <button onclick="usePrompt('Teach me MongoDB with examples')">🍃 MongoDB</button>
+    <button onclick="usePrompt('Teach me FastAPI')">⚡ FastAPI</button>
+  </div>
+
+  <div class="sidebar-section">
+    <p class="section-title">AI / ML</p>
+    <button onclick="usePrompt('Teach me machine learning')">🤖 Machine Learning</button>
+    <button onclick="usePrompt('Teach me deep learning')">🧠 Deep Learning</button>
+    <button onclick="usePrompt('Explain neural networks')">🔗 Neural Networks</button>
+  </div>
+
+  <div class="sidebar-bottom">
+    <div class="status"><span class="status-dot"></span>Gemini Connected</div>
+  </div>
+</aside>
+
+<main class="main">
+<header class="header">
+  <div><h1>Chat Assistant</h1><p>Learn • Build • Debug • Create</p></div>
+  <div class="model"><span class="model-dot"></span>Gemini</div>
+</header>
+
+<section id="chat" class="chat">
+  <div id="welcome" class="welcome">
+    <div class="welcome-icon">G</div>
+    <h2>What are you building today?</h2>
+    <p>Ask me about programming, debugging, AI, databases, software development and more.</p>
+    <div class="suggestions">
+      <button onclick="usePrompt('Explain Python classes with a simple example')"><span>🐍</span>Explain Python OOP</button>
+      <button onclick="usePrompt('Debug this Python error: ModuleNotFoundError')"><span>🐛</span>Debug my code</button>
+      <button onclick="usePrompt('Teach me MongoDB from beginner to advanced')"><span>🍃</span>Learn MongoDB</button>
+      <button onclick="usePrompt('How do I build an AI image classification project?')"><span>🤖</span>Build an AI project</button>
+    </div>
+  </div>
+</section>
+
+<div class="input-area">
+  <div class="input-container">
+    <textarea id="message" placeholder="Ask anything about programming..." rows="1" onkeydown="handleKey(event)"></textarea>
+    <button id="sendButton" onclick="sendMessage()">➤</button>
+  </div>
+  <p class="input-info">Enter to send • Shift + Enter for new line</p>
+</div>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
